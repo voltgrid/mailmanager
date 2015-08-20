@@ -1,0 +1,12 @@
+# App
+Django
+django-reversion==1.9.3
+passlib==1.6.5
+
+# Testing
+model-mommy==1.2.5
+
+# Deployment
+bureaucrat
+dj-static==0.0.6
+gunicorn==19.3.0

@@ -1,0 +1,3 @@
+db : db
+www/media : www/media
+ephemeral : www/static
