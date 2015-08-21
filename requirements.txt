@@ -2,6 +2,7 @@
 Django
 django-reversion==1.9.3
 passlib==1.6.5
+mysqlclient
 
 # Testing
 model-mommy==1.2.5
