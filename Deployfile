@@ -1,4 +1,5 @@
 pip: pip install -r requirements.txt
-syncdb: manage.py syncdb --noinput
+migrate_auth: manage.py migrate auth --noinput
 migrate: manage.py migrate --noinput
+views: manage.py create_views
 collectstatic: manage.py collectstatic --noinput
