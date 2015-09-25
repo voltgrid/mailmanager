@@ -14,9 +14,6 @@ class EmailDomain(models.Model):
 
     domain = models.ForeignKey(Domain)
     #domain_aliases = models.ManyToManyField(Domain)  # This might work
-    # max emails
-    # max storage
-    # etc
 
     class Meta:
         ordering = ['domain']
@@ -38,6 +35,7 @@ class EmailUser(models.Model):
     domain = models.ForeignKey(EmailDomain)
     name = models.CharField(max_length=64, help_text="Local part of email address")
     password = models.CharField(max_length=256, help_text="Hashed Password")
+    quota = models.IntegerField(default=512, help_text='Quota in MB')
 
     class Meta:
         ordering = ['name', 'domain']
