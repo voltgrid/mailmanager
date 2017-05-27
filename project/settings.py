@@ -76,9 +76,9 @@ if os.environ.get('DATABASE_NAME') and os.environ.get ('DATABASE_USER'):
             'ENGINE': 'django.db.backends.mysql',
             'NAME': os.environ.get('DATABASE_NAME'),
             'USER': os.environ.get('DATABASE_USER'),
-            'PASSWORD': os.environ.setdefault('DATABASE_PASS', ''),
-            'HOST': os.environ.setdefault('DATABASE_HOST', 'localhost'),
-            'PORT': os.environ.setdefault('DATABASE_PORT', '3306'),
+            'PASSWORD': os.environ.get('DATABASE_PASS', ''),
+            'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
+            'PORT': os.environ.get('DATABASE_PORT', '3306'),
         }
     }
 else:
@@ -89,15 +89,15 @@ else:
         }
     }
 
-TIME_ZONE = os.environ.setdefault('TIME_ZONE', "Australia/Sydney")
-EMAIL_HOST = os.environ.setdefault('EMAIL_HOST', 'localhost')
-EMAIL_PORT = int(os.environ.setdefault('EMAIL_PORT', '25'))
-SERVER_EMAIL = os.environ.get('SERVER_EMAIL')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+TIME_ZONE = os.environ.get('TIME_ZONE', "Australia/Sydney")
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '25'))
+SERVER_EMAIL = os.environ.get('SERVER_EMAIL', 'root@localhost')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
 
 ADMINS = ()
 for admin in os.environ.get('ADMINS', '').split():
-    ADMINS = ADMINS + (tuple(admin.split('/')),)
+    ADMINS += (tuple(admin.split('/')),)
 MANAGERS = ADMINS
 
 DEBUG = bool(os.environ.get('DEBUG', 'False').lower() in ("true", "yes", "t", "1"))
