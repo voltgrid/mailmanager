@@ -1,5 +1,5 @@
 # App
-Django==1.8.18
+Django==1.8.19
 django-reversion==1.9.3
 passlib==1.6.5
 mysqlclient
@@ -10,4 +10,4 @@ model-mommy==1.2.5
 # Deployment
 bureaucrat
 dj-static==0.0.6
-gunicorn==19.3.0
+gunicorn==19.9.0
